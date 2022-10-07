@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'booking_app.apps.BookingAppConfig',
 ]
 
@@ -88,6 +89,8 @@ DATABASES = {
         'NAME': 'db_hotel',
         'USER': 'admin',
         'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
