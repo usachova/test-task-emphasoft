@@ -1,9 +1,10 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
-
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Room, Booking
 from .permissions import IsOwnerOrAdminOrReadOnly
 from .serializers import RoomSerializer, BookingSerializer
+from .service import RoomFilter
 
 class BookingAPIView(generics.ListCreateAPIView):
     queryset = Booking.objects.all()
@@ -20,9 +21,13 @@ class BookingAPIDestroy(generics.RetrieveDestroyAPIView):
     serializer_class = BookingSerializer
     permission_classes = (IsOwnerOrAdminOrReadOnly, )
 
+# class BookingAPIFilters():
+
 class RoomAPIView(generics.ListCreateAPIView):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
+    filter_backends = (DjangoFilterBackend, )
+    filterset_class = RoomFilter
     # permission_classes =
 
 class RoomAPIUpdate(generics.RetrieveUpdateAPIView):

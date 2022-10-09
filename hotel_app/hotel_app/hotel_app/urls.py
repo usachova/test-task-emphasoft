@@ -20,8 +20,8 @@ from booking_app.views import RoomAPIView, BookingAPIDestroy, BookingAPIUpdate, 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('rest_framework.urls')),
-    path('api/rooms', RoomAPIView.as_view()),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/rooms/', RoomAPIView.as_view()),
     # path('api/room/<int:pk>/', RoomAPIUpdate.as_view()),
     # path('api/delete_room/<int:pk>/', RoomAPIDestroy.as_view()),
     path('api/bookings', BookingAPIView.as_view()),
