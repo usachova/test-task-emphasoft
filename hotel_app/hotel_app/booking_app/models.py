@@ -10,7 +10,8 @@ class Room(models.Model):
     beds_count = models.IntegerField()
 
     def __str__(self):
-        return self.number
+        return self.number + ', кол-во мест: ' + str(self.beds_count) \
+               + ', стоимость в сутки: ' + str(self.cost)
 
 class Booking(models.Model):
     date_start = models.DateField(default=datetime.now)

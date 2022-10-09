@@ -16,14 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from booking_app.views import RoomAPIView, BookingAPIDestroy, BookingAPIUpdate, BookingAPIView
+from booking_app.views import *
 
 urlpatterns = [
+    path('', MainView.as_view(), name='index'),
+    path('login', LoginUserView.as_view(), name='login'),
+    path('register', RedistrUserView.as_view(), name='register'),
+    path('logout', LogoutUserView.as_view(), name='logout'),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api/rooms/', RoomAPIView.as_view()),
-    # path('api/room/<int:pk>/', RoomAPIUpdate.as_view()),
-    # path('api/delete_room/<int:pk>/', RoomAPIDestroy.as_view()),
     path('api/bookings', BookingAPIView.as_view()),
     path('api/booking/<int:pk>/', BookingAPIUpdate.as_view()),
     path('api/delete_booking/<int:pk>/', BookingAPIDestroy.as_view()),

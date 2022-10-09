@@ -1,0 +1,10 @@
+{% extends 'booking_app/base.html' %}
+{% block title %} Вход {% endblock %}
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <button type="submit">Войти</button>
+    </form>
+{% endblock %}
