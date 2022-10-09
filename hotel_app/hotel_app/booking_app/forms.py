@@ -8,6 +8,7 @@ class AuthUserForm(AuthenticationForm, ModelForm):
         model = User
         fields = ['username', 'password']
 
+
 class RedistrUserForm(ModelForm):
     class Meta:
         model = User

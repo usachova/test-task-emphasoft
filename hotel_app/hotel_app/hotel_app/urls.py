@@ -16,7 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from booking_app.views import *
+from booking_app.views import (
+    MainView,
+    LoginUserView,
+    RedistrUserView,
+    LogoutUserView,
+    RoomAPIView,
+    BookingAPIView,
+    BookingAPIUpdate,
+    BookingAPIDestroy,
+    RoomAPISearch,
+)
 
 urlpatterns = [
     path('', MainView.as_view(), name='index'),

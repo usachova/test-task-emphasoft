@@ -7,9 +7,12 @@ from .models import Room, Booking
 class RoomAdmin(admin.ModelAdmin):
     pass
 
+
 admin.site.register(Room, RoomAdmin)
+
 
 class BookingAdmin(admin.ModelAdmin):
     pass
+
 
 admin.site.register(Booking, RoomAdmin)
