@@ -29,4 +29,5 @@ urlpatterns = [
     path('api/bookings', BookingAPIView.as_view()),
     path('api/booking/<int:pk>/', BookingAPIUpdate.as_view()),
     path('api/delete_booking/<int:pk>/', BookingAPIDestroy.as_view()),
+    path('api/search_room/', RoomAPISearch.as_view())
 ]
